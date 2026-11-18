@@ -1,0 +1,72 @@
+
+import tensorflow as tf
+
+# 1. Basic Python Operations
+a = 10
+b = 5
+
+print("===== BASIC PYTHON OPERATIONS =====")
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+print("Division:", a / b)
+print("Modulus:", a % b)
+print("Exponentiation:", a ** b)
+print("Floor Division:", a // b)
+
+
+# 2. Creating TensorFlow Tensors
+print("\n===== TENSOR CREATION =====")
+
+x = tf.constant([1, 2, 3])
+y = tf.constant([4, 5, 6])
+
+print("Tensor X:", x)
+print("Tensor Y:", y)
+
+
+# 3. Tensor Arithmetic Operations
+print("\n===== TENSOR OPERATIONS =====")
+
+print("Addition:", tf.add(x, y))
+print("Subtraction:", tf.subtract(x, y))
+print("Multiplication:", tf.multiply(x, y))
+print("Division:", tf.divide(x, y))
+
+
+# 4. Matrix Operations
+print("\n===== MATRIX OPERATIONS =====")
+
+m1 = tf.constant([[1, 2],
+                  [3, 4]])
+
+m2 = tf.constant([[5, 6],
+                  [7, 8]])
+
+print("Matrix Addition:\n", tf.add(m1, m2))
+print("Matrix Multiplication:\n", tf.matmul(m1, m2))
+
+
+# 5. Tensor Reshaping
+print("\n===== TENSOR RESHAPING =====")
+
+t = tf.constant([1, 2, 3, 4, 5, 6])
+reshaped = tf.reshape(t, [2, 3])
+
+print("Original Tensor:", t)
+print("Reshaped Tensor:\n", reshaped)
+
+
+# 6. Tensor Properties
+print("\n===== TENSOR PROPERTIES =====")
+
+print("Shape:", reshaped.shape)
+print("Rank:", tf.rank(reshaped).numpy())
+print("Data Type:", reshaped.dtype)
+
+
+# 7. Sum and Mean
+print("\n===== SUM AND MEAN =====")
+
+print("Sum:", tf.reduce_sum(reshaped).numpy())
+print("Mean:", tf.reduce_mean(reshaped).numpy())
